@@ -8,6 +8,7 @@ import ChatScreen from './src/screens/ChatScreen';
 import TransferScreen from './src/screens/TransferScreen';
 import TransactionDetailScreen from './src/screens/TransactionDetailScreen';
 import { RootStackParamList } from './src/types/navigation';
+import LoginScreen from './src/screens/LoginScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -17,11 +18,12 @@ const App: React.FC = () => {
       <StatusBar style="auto" />
       <Stack.Navigator 
         id={undefined}
-        initialRouteName="Home"
+        initialRouteName="Login"
         screenOptions={{
           headerShown: false,
         }}
       >
+        <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Chat" component={ChatScreen} />
